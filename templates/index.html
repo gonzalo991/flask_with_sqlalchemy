@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Flask App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Hello World from Flask</h1>
+    <br/>
+    <a href="/login"><i>Sign In</i></a>
+    <br/>
+    <a href="/form">Add Person</a>
+    <br/>
+    <br/>
+
+    <h1 class="text-center mt-5 nb-5 text-primary">Listado de Personas</h1>
+
+    <!-- Tabla de pacientes -->
+
+    <table class="table table-bodered">
+        <thead>
+            <th scope="col">PersonId</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+        </thead>
+        <tbody>
+            {%for person in data%}
+            <tr>
+                <td>{{person.id}}</td>
+                <td>{{person.name}}</td>
+                <td>{{person.surname}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.gender}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
